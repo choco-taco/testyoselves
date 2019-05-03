@@ -1,0 +1,67 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Create A Session</h1>
+        <p class="lead">Make your study sessions here by picking a group and study guide.</p>
+    </div>
+</div>
+
+<div class="container" style="max-width: 50%">
+
+    <!-- ************************************** -->
+    <!-- ============ SESSION FORM ============ -->
+    <!-- ************************************** -->
+
+    <form action="/dashboard/create/session" method="POST">
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-body">
+                <h4 class="card-title">Name</h4>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg" for="name"></label>
+                    <input class="form-control form-control-lg" name="name" type="text" placeholder="ex: Finals session" id="name">
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white bg-secondary mb-3" style="max-width: 100%;">
+            <div class="card-header">Step One:</div>
+            <div class="card-body">
+                <h4 class="card-title">Select Study Guide</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <select class="custom-select" name="guide">
+                                <option selected="">Select Study Guide</option>
+                                {{#each guides}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">Step Two:</div>
+            <div class="card-body">
+                <h4 class="card-title">Select Study Group</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <select class="custom-select" name="group">
+                                <option selected="">Select Group</option>
+                                {{#each groups}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block" id="create-session">Create Session</button>
+    </form>
+
+</div>

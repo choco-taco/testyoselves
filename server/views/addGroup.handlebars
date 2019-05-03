@@ -1,0 +1,50 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Create A Group</h1>
+        <p class="lead">Please create your styudy group name below. Be sure to invite your friends to your study group. Once both steps are completed click "Create Study Group"</p>
+    </div>
+</div>
+
+<div class="container" style="max-width: 50%">
+
+    <!-- ************************************* -->
+    <!-- ============ INVITE FORM ============ -->
+    <!-- ************************************* -->
+
+    <form action="/dashboard/create/group" method="POST">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-body">
+                <h4 class="card-title">Name</h4>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg" for="name"></label>
+                    <input class="form-control form-control-lg" name="name" type="text" placeholder="ex: O Chem Group" id="name">
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3" style="max-width: 100%;">
+            <div class="card-header">Your Friends</div>
+            <div class="card-body">
+                {{#each friends}}
+                <div class="row">
+                    <div class="col col-xs-2">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="{{this.username}}" name="friend"
+                                    value="{{this.id}}">
+                                <label class="custom-control-label" for="{{this.username}}" name="friend">Invite</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-8">
+                        <i class="fas fa-user mr-1"></i> <b>{{this.username}}</b>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block">Create Study Group</button>
+    </form>
+</div>

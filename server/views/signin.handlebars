@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-1">LOGIN <i class="fas fa-sign-in-alt"></i></h1>
+        <p class="lead">Please Enter Your Username And Password Below </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-8 mx-auto">
+            <form action="/users/signin" method="POST">
+                {{#each errors}}
+                <p>{{this.message}}</p>
+                {{/each}}
+                {{#if success}}
+                {{success}}
+                {{/if}}
+                <div class="form-group"><i class="fas fa-user"></i>
+                    <label for="usernameOrEmail">Username or email</label>
+                    <input type="text" class="form-control" id="usernameOrEmail" name="usernameOrEmail" placeholder="Enter username or email">
+                </div>
+                <div class="form-group"><i class="fas fa-lock"></i>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <div style="padding-top:10px; font-size:85%">
+                        Don't have an account?
+                        <a href="/users/signup">Sign Up Here</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In <i class="fas fa-sign-in-alt"></i></button>
+            </form>
+        </div>
+    </div>
+</div>

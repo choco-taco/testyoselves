@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="mt-5 text-center mb-5">Feel the Learn, {{username}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-xs-3 mb-3">
+            <ul class="list-group" style="width:100%">
+                <li class="list-group-item d-flex">
+                    <i class="fas fa-crown mr-3"></i>
+                    <span class="badge badge-secondary badge-pill">Leader {{leader}}</span>
+                </li>
+                <li class="list-group-item d-flex">
+                    <i class="fas fa-users mr-3"></i>
+                    <span class="badge badge-primary badge-pill">{{groupName}}</span>
+                </li>
+                <li class="list-group-item d-flex">
+                    <i class="far fa-file-alt mr-3"></i>
+                    <span class="badge badge-secondary badge-pill">{{guideName}}</span>
+                </li>
+                <li class="list-group-item d-flex">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    <span class="badge badge-primary badge-pill">{{sessionName}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col col-xs-3 mb-3">
+            <div class="container text-center" id="card-container">
+                <div class="card text-white bg-primary mb-3" id="problem-card">
+                    <div class="card-header"># <span id="problem-number"></span></div>
+                    <div class="card-body">
+                        <h4 class="card-title text-center" id="problem-title"></h4>
+                        <h1 class="card-text text-center mt-5 mb-5" id="problem-text"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-xs-3">
+            <div class="container" style="width:100%">
+                <div class="card  border-primary">
+                    <div class="card-body">
+                        <ul id="messages" style="height: 200px; overflow: auto;"></ul>
+                    </div>
+                </div>
+                <form action="">
+                    <input class="form-control border-primary mb-2 mt-2" id="m" autocomplete="off"/>
+                    <button class="btn btn-secondary" id="btn-chat">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
