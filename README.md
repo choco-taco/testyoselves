@@ -19,7 +19,7 @@ Click the link below to navigate to the home page.
 
 
 # Heroku Link
-[Test_Yo_Self] (http://testyoselves.herokuapp.com/)
+[Test Yo Self] (http://testyoselves.herokuapp.com/)
 
 Some Technolgies Used:
 - Express 
